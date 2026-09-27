@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "ChatKeep",
+  "version": "1.0.0",
+  "description": "Export ChatGPT, Claude and Gemini conversations as Markdown, and keep one prompt library for all three.",
+  "permissions": ["storage"],
+  "content_scripts": [
+    {
+      "matches": ["https://chatgpt.com/*", "https://chat.openai.com/*", "https://claude.ai/*", "https://gemini.google.com/*"],
+      "js": ["chatkeep-logic.js", "content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "icons": { "16": "assets/icon16.png", "48": "assets/icon48.png", "128": "assets/icon128.png" }
+}
